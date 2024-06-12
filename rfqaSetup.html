@@ -1,0 +1,119 @@
+---
+layout:
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rainforest QA Setup</title>
+
+  <!-- Bootstrap core CSS -->
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/animate.min.css" rel="stylesheet">
+
+  <!-- Custom styling plus plugins -->
+  <link href="css/custom.css" rel="stylesheet">
+  <link href="css/icheck/flat/green.css" rel="stylesheet">
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/localstorage.js"></script>
+  <script src="js/setup/setup.js"></script>
+
+
+  <!--[if lt IE 9]>
+        <script src="../assets/js/ie8-responsive-file-warning.js"></script>
+        <![endif]-->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body style="background:#F7F7F7;">
+
+<div class="">
+  <a class="hiddenanchor" id="toregister"></a>
+  <a class="hiddenanchor" id="tologin"></a>
+
+  <div id="wrapper">
+    <div id="login" class="animate form">
+      <section class="login_content">
+        <form action="index.html" onSubmit="return checkform()">
+          <h1>Set up Pendo</h1>
+          <div id="setupForm">
+            <div>
+              <label for="agentHost">Agent Host Identifier</label>
+              <input id="agentHost" type="text" class="form-control" placeholder="cdn.pendo.io" autocomplete="off"/>
+            </div>
+            <div>
+              <label for="subKey">Subscription apiKey</label>
+              <input id="subKey" type="text" class="form-control" placeholder="API Key" pattern="^.{8}-.{4}-.{4}-.{4}-.{12}" autocomplete="off"/>
+            </div>
+            <div>
+              <label for="visitorId">Visitor ID</label>
+              <input id="visitorId" type="text" class="form-control" placeholder="Visitor Id" autocomplete="off"/>
+            </div>
+            <div>
+              <label for="email">Email (Optional)</label>
+              <input id="email" type="text" class="form-control" placeholder="Email Address (Optional)" autocomplete="off"/>
+            </div>
+            <div>
+              <label for="accountName">Account Name (Optional)</label>
+              <input id="accountName" type="text" class="form-control" placeholder="Account Name (Optional)" autocomplete="off"/>
+            </div>
+            <div>
+              <label for="accountId">Account ID (Optional)</label>
+              <input id="accountId" type="text" class="form-control" placeholder="Account ID (Optional)" autocomplete="off"/>
+            </div>
+            <!--div>
+              <label><input id="parent_check" type="checkbox" onclick="ParentHandler()">Activate Parent Account?</label>
+            </div -->
+            <div id="parentAccountBlock" hidden="true">
+              <label for="parentAccountName">Parent Account ID (Optional)</label>
+              <input id="parentAccountName" type="text" class="form-control" placeholder="Parent Account ID (Optional)" autocomplete="off"/>
+            </div>
+          </div>
+          <div>
+            <button id="submitButton" class="btn btn-default">Submit</button>
+          </div>
+          <div class="clearfix"></div>
+          <p>Find your <a href="https://app.pendo.io/admin/settings" target="_blank" rel="noopener noreferrer">Subscription Key</a></p>
+          <div class="separator">
+            </p>
+            <div class="clearfix"></div>
+            <br />
+            <div>
+              <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Pendo Sandbox</h1>
+            </div>
+          </div>
+        </form>
+        <!-- form -->
+      </section>
+      <!-- content -->
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
+
+<script>
+    document.getElementById("subKey").disabled = true;
+    document.getElementById("agentHost").disabled = true;
+    document.getElementById("accountName").disabled = true;
+    document.getElementById("accountId").disabled = true;
+</script>

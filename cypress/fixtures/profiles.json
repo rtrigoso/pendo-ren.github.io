@@ -1,0 +1,9 @@
+{
+  "accountId": "unittest",
+  "accountName": "unitTest",
+  "agentHost": "pendo-test-static.storage.googleapis.com",
+  "apiKey": "8b0e3281-bc25-4c17-7c84-c4598600c362",
+  "email": "unittester@pendo.io",
+  "parentAccountActive": "false",
+  "visitorId": "unittester"
+}

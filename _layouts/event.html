@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track Events</title>
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link href='/css/events/common.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="nav-ms" style="background:#F7F7F7;">
+    <div class="container body">
+        <div class="main_container">
+            <div class="right_col" role="main">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h1 class="jss123">Testing Track Events</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>Using the {{page.subscription}} subscription on {{page.environment}}.
+                    <div id="wrapper">
+                        <form>
+                            <fieldset>
+                                <legend>Change Visitor Parameters</legend>
+                                <div id="visitorForm">
+                                    <b>Visitor ID:</b> <br>
+                                    <input name="visitorid" id="visitorid" type="text" class="form-control"  autocomplete="off"/><br>
+                                    <b>Email:</b> <br>
+                                    <input name="email" id="email" type="text" class="form-control"  autocomplete="off"/><br>
+                                    <b>Account ID:</b> <br>
+                                    <input name="accountid" id="accountid" type="text" class="form-control"  autocomplete="off"/><br><br>
+                                </div>
+                                <div>
+                                    <button type="submit" id="submitButton" class="btn btn-default">Submit</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="x_title">
+                            <h2>Segment.io Track</h2>
+                            <p>Events ingested in production only</p>
+                        </div>
+                        <div class="x_content">
+                            <br><br>
+                            <button type="button" onclick="onSegment1()" class="btn segment-1">Segment 1</button><br><br>
+                            <button type="button" onclick="onSegment2()" class="btn segment-2">Segment 2</button><br><br>
+                            <button type="button" onclick="onSegment3()" class="btn segment-3">Segment 3</button><br><br>
+                            <button type="button" onclick="onSegment4()" class="btn segment-4">Segment 4</button><br><br>
+                            <button type="button" onclick="onSegment5()" class="btn segment-5">Segment 5</button><br><br>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="x_title">
+                            <h2>Pendo Track</h2>
+                            <p>Requires Agent version 2.14.3</p>
+                        </div>
+                        <div class="x_content">
+                            <button type="button" onclick="onPendo1()" class="btn pendo-1">Pendo 1</button><br><br>
+                            <button type="button" onclick="onPendo2()" class="btn pendo-2">Pendo 2</button><br><br>
+                            <button type="button" onclick="onPendo3()" class="btn pendo-3">Pendo 3</button><br><br>
+                            <button type="button" onclick="onPendo4()" class="btn pendo-4">Pendo 4</button><br><br>
+                            <button type="button" onclick="onPendo5()" class="btn pendo-5">Pendo 5</button><br><br>
+                            <button type="button" onclick="onPendo6()" class="jss600">Pendo 6</button><br><br>
+                        </div>
+                    </div>
+                </div>
+
+                {{ content }}
+
+                <script>
+                    function onSegment1() {
+                        analytics.track('Segment Track 1', {
+                            title: 'SegmentTrack1',
+                            visitorid: visitorid,
+                            group_id: accountid,
+                            email: email,
+                            color: 'red',
+                            team: 'Wildlings'
+                        });
+                    }
+
+                    function onSegment2() {
+                        var x = randomNumber(100);
+                        analytics.track('Segment Track 2', {
+                            title: 'SegmentTrack2',
+                            groupId: accountid,
+                            color: 'blue',
+                            random: x,
+                            team: 'Scrumbledores'
+                        });
+                    }
+
+                    function onSegment3() {
+                        analytics.track('Segment Track 3', {
+                            title: 'SegmentTrack3',
+                            color: 'green',
+                            team: 'Batman'
+                        });
+                    }
+
+                    function onSegment4() {
+                        analytics.track('Segment Track 4', {
+                            title: 'Segment Track 4',
+                            color: 'yellow',
+                            team: 'Ion Chefs'
+                        });
+                    }
+
+                    function onSegment5() {
+                        analytics.track('Segment Track 5', {
+                            title: 'Segment Track 5',
+                            color: 'orange',
+                            team: 'Atlas'
+                        });
+                    }
+
+                    function randomNumber(n) {
+                        return Math.floor(Math.random()* n) + 1;
+                    }
+
+                    function onPendo1() {
+                        console.log(pendo);
+                        pendo.track("Pendo Track 1", {
+                            title: "Pendo Track 1",
+                            color: "red",
+                            team: "Wildlings"
+                        });
+                    }
+
+                    function onPendo2() {
+                        var x = randomNumber(100);
+                        pendo.track("Pendo Track 2", {
+                            title: "Pendo Track 2",
+                            color: "blue",
+                            team: "Scrumbledores",
+                            random: x
+                        });
+                    }
+
+                    function onPendo3() {
+                        pendo.track("Pendo Track 3", {
+                            title: "Pendo Track 3",
+                            color: "green",
+                            team: "Batman"
+                        });
+                    }
+
+                    function onPendo4() {
+                        pendo.track("Pendo Track 4", {
+                            title: "Pendo Track 4",
+                            color: "yellow",
+                            team: "Ion Chefs"
+                        });
+                    }
+
+                    function onPendo5() {
+                        pendo.track("Pendo Track 5", {
+                            title: "Pendo Track 5",
+                            color: "orange",
+                            team: "Atlas"
+                        });
+                    }
+
+                    function onPendo6() {
+                        pendo.track("Pendo Track 6", {
+                            title: "Pendo Track 6",
+                            color: "magenta",
+                            team: "Cerberus"
+                        });
+                    }
+
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

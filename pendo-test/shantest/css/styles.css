@@ -1,0 +1,273 @@
+body {
+    color:#2b2f34;
+    font-family: 'Baumans', sans-serif;
+    background-color: #f3f3f3;
+    text-align: center;
+}
+
+a {
+    color:#2b2f34;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#2b2f34;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #a7acb4;
+}
+
+#title a:visited {
+    color:#2b2f34;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    overflow: hidden;
+    border-spacing: 0px;
+    background-color: #f3f3f3;
+    padding-right: 200px;
+    padding-left: 50px;
+}
+
+.details-table {
+    padding-right: 50px;
+}
+
+th {
+    background-color: #6d7680;
+    color: #fff;
+    border: #6d7680;
+    padding: 5px;
+    text-align: left;
+}
+
+td {
+    padding:20px 5px 20px 5px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+
+td.border-left {
+    border-left: 1px solid #ddd;
+}
+td.border-right {
+    border-right: 1px solid #ddd;
+}
+
+#stats {
+    position: absolute;
+    top: 250px;
+    right: 50px;
+    padding: 5px;
+    width: 100px;
+}
+
+#stats .stat-item {
+    background-color: #fff;
+    width: 100px;
+    border: 1px solid #ddd;
+    margin-bottom: 25px;
+}
+
+#stats .stat {
+    width: 100px;
+    height: 80px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#stats .stat-single {
+    width: 100px;
+    height: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#stats .stat-year {
+    font-size: 1.2em;
+    color: #f06262;
+    font-weight: 600;
+}
+
+#stats .stat-value {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+#stats .stat-label {
+    color: #a7acb4;
+}
+
+#stats .stat-bar {
+    background-color: #f06262;
+    height: 30px;
+}
+
+.date, .title, .author {
+    width: 150px;
+}
+
+.icons {
+    width: 60px;
+    text-align: center;
+}
+
+.link {
+    width: 100px;
+    padding-left: 20px;
+}
+
+td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+td.details-3 {
+    overflow:initial;
+    white-space: normal !important;
+}
+
+th.details-1 {
+    height: 35px;
+}
+
+td.details-1, th.details-1 {
+    width: 300px;
+    text-align: center;
+}
+
+td.details-2, td.details-3, td.details-1 {
+    vertical-align: top;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+/* TODO - make whole row change color on hover.  Currently a problem because the TDs are colored, not the TR, so can only do a single TD at a time. */
+
+table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):not(.icons):after {
+    content: " \25B4\25BE";
+    color: #8a9199;
+}
+
+#title {
+  margin-top: 50px;
+  font-size: 3em;
+}
+
+
+/* Style the search box */
+
+/* Form wrapper styling */
+.form-wrapper {
+    width: 450px;
+    margin: 50px auto 50px auto;
+}
+
+/* Form text input */
+
+.form-wrapper input {
+    width: 340px;
+    padding: 10px 5px;
+    float: left;
+    font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.form-wrapper input:focus {
+    outline: 0;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+.form-wrapper input::-webkit-input-placeholder {
+   color: #999;
+   font-weight: normal;
+   font-style: italic;
+}
+
+.form-wrapper input:-moz-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.form-wrapper input:-ms-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Form submit button */
+.cf:before, .cf:after{
+    content:"";
+    display:table;
+}
+
+.cf:after{
+    clear:both;
+}
+
+.cf{
+    zoom:1;
+}
+
+.form-wrapper button {
+    overflow: visible;
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 110px;
+    font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    color: #fff;
+    text-transform: uppercase;
+    background: #d83c3c;
+    border-radius: 0 3px 3px 0;
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+}
+
+.form-wrapper button:hover{
+    background: #e54040;
+}
+
+.form-wrapper button:active,
+.form-wrapper button:focus{
+    background: #c42f2f;
+    outline: 0;
+}
+
+.form-wrapper button:before { /* left arrow */
+    content: '';
+    position: absolute;
+    border-width: 8px 8px 8px 0;
+    border-style: solid solid solid none;
+    border-color: transparent #d83c3c transparent;
+    top: 12px;
+    left: -6px;
+}
+
+.form-wrapper button:hover:before{
+    border-right-color: #e54040;
+}
+
+.form-wrapper button:focus:before,
+.form-wrapper button:active:before{
+        border-right-color: #c42f2f;
+}
+
+.form-wrapper button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
+    border: 0;
+    padding: 0;
+}    

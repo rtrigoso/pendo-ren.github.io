@@ -1,0 +1,24 @@
+{
+  "name": "pendo-io.github.io",
+  "version": "1.0.0",
+  "description": "Uses Jekyll to create static site template. Served through github. https://jekyllrb.com/docs/home/",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "test:local": "cypress run --env baseUrl=http://127.0.0.1:4000",
+    "test:master": "cypress run --env baseUrl=https://pendo-io.github.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pendo-io/pendo-io.github.io.git"
+  },
+  "author": "Pendo Quality Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pendo-io/pendo-io.github.io/issues"
+  },
+  "homepage": "https://github.com/pendo-io/pendo-io.github.io#readme",
+  "dependencies": {
+    "cypress": "^3.8.3",
+    "fs-extra": "^7.0.1"
+  }
+}

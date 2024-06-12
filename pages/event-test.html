@@ -1,0 +1,89 @@
+---
+layout: event
+permalink: event-test.html
+subscription: pendo_tracks
+environment: https://pendo-test.appspot.com
+---
+
+<script>
+    // First, get our visitorId from HTML5 storage. If it doesn't exist, initialize it.
+    var visitorid = localStorage.getItem("visitorid-test");
+    if (!visitorid) {
+        visitorid = "test@user.com";
+        localStorage.setItem("visitorid-test", visitorid);
+    }
+    var accountid = localStorage.getItem("accountid-test");
+    if (!accountid) {
+        accountid = "Quality";
+        localStorage.setItem("accountid-test", accountid);
+    }
+    var email = localStorage.getItem("email-test");
+    if (!email) {
+        email = "test@user.com";
+        localStorage.setItem("email-test", email);
+    }
+
+    window.onload = function () {
+        var visitorForm = document.forms[0];
+        visitorForm.visitorid.value = visitorid;
+        visitorForm.accountid.value = accountid;
+        visitorForm.email.value = email;
+
+        visitorForm.onsubmit = function (evt) {
+            evt.preventDefault();
+            console.log("visitorid now " + visitorForm.visitorid.value);
+            console.log("accountid now " + visitorForm.accountid.value);
+            console.log("email now " + visitorForm.email.value);
+            localStorage.setItem("visitorid-test", visitorForm.visitorid.value);
+            localStorage.setItem("accountid-test", visitorForm.accountid.value);
+            localStorage.setItem("email-test", visitorForm.email.value);
+            window.location.reload();
+        };
+    };
+
+    // PENDO SNIPPET
+
+    (function (apiKey) {
+        (function (p, e, n, d, o) {
+            var v, w, x, y, z;
+            o = p[d] = p[d] || {};
+            o._q = [];
+            v = ['initialize', 'identify', 'updateOptions', 'pageLoad'];
+            for (w = 0, x = v.length; w < x; ++w)(function (m) {
+                o[m] = o[m] || function () {
+                        o._q[m === v[0] ? 'unshift' : 'push']([m].concat([].slice.call(arguments, 0)));
+                    };
+            })(v[w]);
+            y = e.createElement(n);
+            y.async = !0;
+            y.src = 'https://pendo-test-static.storage.googleapis.com/agent/static/' + apiKey + '/pendo.js';
+            z = e.getElementsByTagName(n)[0];
+            z.parentNode.insertBefore(y, z);
+        })(window, document, 'script', 'pendo');
+
+        // Call this whenever information about your visitors becomes available
+        // Please use Strings, Numbers, or Bools for value types.
+        pendo.initialize({
+            visitor: {
+                id: visitorid,   // Required if user is logged in
+                email: email       // Optional
+                // role:         // Optional
+
+                // You can add any additional visitor level key-values here,
+                // as long as it's not one of the above reserved names.
+            },
+
+            account: {
+                id: accountid // Highly recommended
+                // name:         // Optional
+                // planLevel:    // Optional
+                // planPrice:    // Optional
+                // creationDate: // Optional
+
+                // You can add any additional account level key-values here,
+                // as long as it's not one of the above reserved names.
+            }
+        });
+    })('2570c638-5ee3-414a-6239-7ea1f888953a');
+</script>
+

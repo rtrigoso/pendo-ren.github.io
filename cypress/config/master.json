@@ -1,0 +1,6 @@
+{
+  "baseUrl": "https://pendo-io.github.io",
+  "env": {
+    "branch": "master"
+  }
+}

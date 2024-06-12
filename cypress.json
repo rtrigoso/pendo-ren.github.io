@@ -1,0 +1,10 @@
+{
+  "baseUrl": "https://pendo-io.github.io",
+  "env": {},
+  "reporter": "spec",
+  "screenshotsFolder": "./cypress/build/screenshots",
+  "supportFile": "./cypress/support/index.js",
+  "videoCompression": 50,
+  "videosFolder": "./cypress/build/videos",
+  "watchForFileChanges": true
+}
